@@ -29,4 +29,5 @@ def pointat(curve: rh.Curve, t: float=0):
 
 
 if __name__ == '__main__':
+    # set debug=True
     app.run(debug=True)
