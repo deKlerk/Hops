@@ -7,6 +7,9 @@ import rhino3dm as rh
 app = Flask(__name__)
 hops = hs.Hops(app)
 
+@hops.app.route("/")
+def index():
+    return "<h1>Grasshopper components from endpoints using Hops</h1>"
 
 #-- Point At component --#
 @hops.component(
