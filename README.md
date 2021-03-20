@@ -1,6 +1,6 @@
 # Hops
 
-Development of Grasshopper components using Hops server as middleware to a Flask app.
+Development of Grasshopper components from endpoints using Hops server as middleware to a Flask app.
 
 ### Reference
 
