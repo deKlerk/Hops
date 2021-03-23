@@ -3,13 +3,15 @@ import ghhops_server as hs
 from ghhops_server.params import HopsCurve, HopsNumber
 import rhino3dm as rh
 
+
 # register hops app as middleware
 app = Flask(__name__)
-hops = hs.Hops(app)
+hops: hs.HopsFlask = hs.Hops(app)
 
-@hops.app.route("/")
-def index():
-    return "<h1>Grasshopper components from endpoints using Hops</h1>"
+# flask app can be used for other stuff drectly
+@app.route("/help")
+def help():
+    return "Welcome to Grashopper Hops for CPython!"
 
 #-- Point At component --#
 @hops.component(
@@ -27,8 +29,6 @@ def index():
 def pointat(curve: rh.Curve, t: float=0):
     pt = curve.PointAt(t)
     return pt
-
-
 
 
 if __name__ == '__main__':
