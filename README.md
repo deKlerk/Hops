@@ -1,4 +1,4 @@
-# Hops
+# Hops Online
 
 Development of Grasshopper components from endpoints using Hops server as middleware to a Flask app.
 The app is available at: <https://hops-online.herokuapp.com/>
