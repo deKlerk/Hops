@@ -3,6 +3,7 @@ import ghhops_server as hs
 from ghhops_server.params import HopsCurve, HopsInteger, HopsNumber
 import rhino3dm as rh
 
+from owlready2 import *
 
 # register hops app as middleware
 app = Flask(__name__)
@@ -71,6 +72,29 @@ def plevels(curve: rh.Curve, d: float=1.0, n: int=1):
 def outlist(n: int=1):
     lst = [i for i in range(n)]
     return lst
+
+
+#-- OWLREADY2 - Pizza demo --#
+@hops.component(
+    "/owldemo",
+    name="OwlDemo",
+    description="Demo using Owlready2",
+    inputs=[hs.HopsString("Url", "U", "Url to ontology")],
+    outputs=[
+        hs.HopsString("Classes", "Cls", "Classes in the ontology"),
+        hs.HopsString("Properties", "Prop", "Properties in the ontology"),
+        hs.HopsString("Individuals", "Ind", "Individuals in the ontology")
+    ]
+)
+def owlDemo(owlurl: str):
+    
+    onto = get_ontology(owlurl).load()
+    owl_class = list(onto.classes())
+    owl_prop = list(onto.properties())
+    owl_ind = list(onto.individuals())
+
+    return (str(owl_class), str(owl_prop), str(owl_ind))
+
 
 if __name__ == '__main__':
     # set debug=True
