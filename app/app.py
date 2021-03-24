@@ -74,7 +74,7 @@ def outlist(n: int=1):
     return lst
 
 
-#-- OWLREADY2 - Pizza demo --#
+#-- OWLREADY2 Demo --#
 @hops.component(
     "/owldemo",
     name="OwlDemo",
