@@ -39,39 +39,23 @@ def pointat(curve: rh.Curve, t: float=0):
     description="Creates a series of levels from a profile",
     inputs=[
         hs.HopsCurve("Curve", "C", "Curve to replicate"),
-        hs.HopsNumber("D", "D", "Distance between levels"),
-        hs.HopsInteger("N", "N", "Number of levels")
+        hs.HopsNumber("Dist", "D", "Distance between levels"),
+        hs.HopsInteger("Num", "N", "Number of levels")
     ],
-    outputs=[
-        hs.HopsCurve("Curves", "Cs", "Series of profile curves")
-    ]
+    outputs=[hs.HopsCurve("Curves", "Cs", "Series of profile curves")]
 )
 def plevels(curve: rh.Curve, d: float=1.0, n: int=1):
-    crvs = [curve]
-    temp = 0.0
+    crvs = []
+    dists = [d*i for i in range(n+1)]
 
-    for i in range(n+1):
-        crv = curve
-        temp += d
-        vec = rh.Vector3d(0,0,temp)
+    for dist in dists:
+        vec = rh.Vector3d(0, 0, dist)
         trans = rh.Transform.Translation(vec)
-        crv.Transform(trans)
-        crvs.append(crv)
+        temp = curve.Duplicate()
+        temp.Transform(trans)
+        crvs.append(temp)
 
     return crvs
-
-#-- Test Lists component --#
-@hops.component(
-    "/outlists",
-    name="OutLists",
-    nickname="OutLists",
-    description="Trying list output",
-    inputs=[hs.HopsInteger("N", "N", "Number of items in list")],
-    outputs=[hs.HopsInteger("out", "out", "list of numbers")]
-)
-def outlist(n: int=1):
-    lst = [i for i in range(n)]
-    return lst
 
 
 #-- OWLREADY2 Demo --#
