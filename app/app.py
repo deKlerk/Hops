@@ -93,7 +93,11 @@ def owlDemo(owlurl: str):
     owl_prop = list(onto.properties())
     owl_ind = list(onto.individuals())
 
-    return (str(owl_class), str(owl_prop), str(owl_ind))
+    ls_class = [str(c) for c in owl_class]
+    ls_prop = [str(p) for p in owl_prop]
+    ls_ind = [str(i) for i in owl_ind]
+
+    return (ls_class, ls_prop, ls_ind)
 
 
 if __name__ == '__main__':
