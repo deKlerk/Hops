@@ -2,7 +2,7 @@
 
 This tutorial summarizes the steps required to deploy your Flask app to Heroku, taking the post [**"Create and Deploy a Simple Web Application with Flask and Heroku"**](https://towardsdatascience.com/create-and-deploy-a-simple-web-application-with-flask-and-heroku-103d867298eb) by [Naveen Venkatesan](https://naveenvenkatesan.medium.com/?source=post_page-----103d867298eb--------------------------------) as a reference.
 
-It assumes you already have Git installed on your machine, a Github account and Heroku account.
+It assumes you already have [Git](https://git-scm.com/) installed on your machine, a [Github](https://github.com/) account and [Heroku](https://www.heroku.com/) account.
 
 Deploying your Flask app to Heroku can be done in a simple way, following the steps below:
 
