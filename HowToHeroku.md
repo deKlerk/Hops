@@ -11,8 +11,8 @@ Deploying your Flask app to Heroku can be done in a simple way, following the st
 You will start by setting up the basis for your app to be developed:
 
 1. Create a [Github](https://github.com/) repository for your application;
-2. Clone your newly created repository and cd into the folder;
-3. Create a virtual environment for your application and activate it;
+2. Clone your newly created repository using `git clone https://github.com/your_name/repo_name` and cd into the folder `repo_name`;
+3. Create a virtual environment for your application with `python3 -m venv venv` (for example) and activate it.
 4. pip install the following modules:
    1. [flask](https://palletsprojects.com/p/flask/)
    2. [gunicorn](https://gunicorn.org/)
