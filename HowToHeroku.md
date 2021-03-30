@@ -28,7 +28,7 @@ Now comes the fun part: developing your app! You can follow the [**Quick Start**
 
 ## Essential Files
 
-> :warning: **CYTHON** - if you are using the [cython](https://cython.org/) module in your app, please refer to this post on stackoverflow: <https://stackoverflow.com/questions/46611178/cython-error-when-pushing-git-on-heroku-master> (thanks to [lennert-loos](https://github.com/lennert-loos) for the reference)
+> :warning: **CYTHON** - if you are using the [cython](https://cython.org/) module in your app, please refer to this post on stackoverflow: <https://stackoverflow.com/questions/46611178/cython-error-when-pushing-git-on-heroku-master> (thanks to [lennert-loos](https://github.com/mcneel/compute.rhino3d/issues/322#issuecomment-809385744) for the reference)
 
 6. Create a **`requirements.txt`** file, where all necessary modules will be listed. You can use `pip freeze > requirements.txt` to automatically write all modules and versions you have installed via pip;
 7. Create a **`Procfile`** with the following content: `web: gunicorn app:app`, a list of instructions for Heroku to run your application considering you are using `gunicorn` and that you named your app `app`;
