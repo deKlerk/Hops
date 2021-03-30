@@ -28,6 +28,8 @@ Now comes the fun part: developing your app! You can follow the [**Quick Start**
 
 ## Essential Files
 
+> :warning: **CYTHON** - if you are using the [cython](https://cython.org/) module in your app, please refer to this post on stackoverflow: <https://stackoverflow.com/questions/46611178/cython-error-when-pushing-git-on-heroku-master>
+
 6. Create a **`requirements.txt`** file, where all necessary modules will be listed. You can use `pip freeze > requirements.txt` to automatically write all modules and versions you have installed via pip;
 7. Create a **`Procfile`** with the following content: `web: gunicorn app:app`, a list of instructions for Heroku to run your application considering you are using `gunicorn` and that you named your app `app`;
 8. Create a **`runtime.txt`** file with the following content: `python-3.9.2` (this will force Heroku to install Python version 3.9.2 - my case). The version should match the one you are using for development - remember that Hops-Server [requires **Python 3.8** or above.](https://discourse.mcneel.com/t/create-cpython-components-using-hops-in-grasshopper/120517)
