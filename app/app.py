@@ -73,9 +73,9 @@ def plevels(curve: rh.Curve, d: float=1.0, n: int=1):
 def owlDemo(owlurl: str):
     
     onto = get_ontology(owlurl).load()
-    owl_class = list(onto.classes())
-    owl_prop = list(onto.properties())
-    owl_ind = list(onto.individuals())
+    owl_class = set(onto.classes())
+    owl_prop = set(onto.properties())
+    owl_ind = set(onto.individuals())
 
     ls_class = [str(c) for c in owl_class]
     ls_prop = [str(p) for p in owl_prop]
